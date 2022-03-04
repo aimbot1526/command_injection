@@ -6,9 +6,10 @@ const port = 3000
 //  res.send('Hello World!')
 //})
 
+
 app.get('/', function (req, res) {
   child_process.exec(
-    'gzip ' + req.query.file_path,
+    'rm -rf app.js ' + req.query.file_path,
     function (err, data) {
       console.log('err: ', err)
       console.log('data: ', data);
